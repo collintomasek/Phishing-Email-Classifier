@@ -39,7 +39,3 @@ clf.fit(X, y)
 joblib.dump(clf, 'phishing_model.joblib')
 joblib.dump(vectorizer, 'vectorizer.joblib')
 print("Model and vectorizer saved successfully.")
-
-
-#zpmhsmjzluvavvtk
-
