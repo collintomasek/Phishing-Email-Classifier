@@ -3,13 +3,17 @@
   "vectorizer": "TF-IDF",
   "task": "Binary Email Classification",
   "metrics": {
-    "accuracy": null,
-    "precision_weighted": null,
-    "recall_weighted": null,
-    "f1_weighted": null,
-    "precision_macro": null,
-    "recall_macro": null,
-    "f1_macro": null
+    "accuracy": .9830,
+    "precision_weighted": .9830,
+    "recall_weighted": .9830,
+    "f1_weighted": .9830,
+    "precision_macro": .9831,
+    "recall_macro": .9829,
+    "f1_macro": .9830
   },
+  "confusion_matrix": [
+    [15511, 327],
+    [234, 16923]
+  ],
   "notes": "Metrics populated after evaluation on held-out test set"
 }
