@@ -9,9 +9,8 @@ import nltk
 
 nltk.download('stopwords')
 
-# ==========================
+
 # Clean Text Function
-# ==========================
 stop_words = set(stopwords.words('english'))
 stemmer = PorterStemmer()
 
@@ -24,15 +23,11 @@ def clean_text(text):
     tokens = [stemmer.stem(word) for word in tokens if word not in stop_words]
     return " ".join(tokens)
 
-# ==========================
 # Load and Clean Dataset
-# ==========================
 df = pd.read_csv("combined_emails.csv")
 df['body_cleaned'] = df['body'].apply(clean_text)
 
-# ==========================
 # Vectorize and Train Model
-# ==========================
 vectorizer = TfidfVectorizer(max_features=3000)
 X = vectorizer.fit_transform(df['body_cleaned'])
 y = df['label']
@@ -40,12 +35,11 @@ y = df['label']
 clf = RandomForestClassifier(n_estimators=100)
 clf.fit(X, y)
 
-# ==========================
 # Save Model and Vectorizer
-# ==========================
 joblib.dump(clf, 'phishing_model.joblib')
 joblib.dump(vectorizer, 'vectorizer.joblib')
 print("Model and vectorizer saved successfully.")
 
 
 #zpmhsmjzluvavvtk
+
