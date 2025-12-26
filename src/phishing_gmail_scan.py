@@ -115,9 +115,7 @@ def fetch_and_classify(service, max_emails=10):
 
     return pd.DataFrame(output)
 
-# ==========================
 # Loop Runner
-# ==========================
 if __name__ == '__main__':
     service = authenticate_gmail()
     while True:
