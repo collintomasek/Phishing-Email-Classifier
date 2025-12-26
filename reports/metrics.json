@@ -1,1 +1,15 @@
-
+{
+  "model_name": "phishing_email_classifier",
+  "vectorizer": "TF-IDF",
+  "task": "Binary Email Classification",
+  "metrics": {
+    "accuracy": null,
+    "precision_weighted": null,
+    "recall_weighted": null,
+    "f1_weighted": null,
+    "precision_macro": null,
+    "recall_macro": null,
+    "f1_macro": null
+  },
+  "notes": "Metrics populated after evaluation on held-out test set"
+}
