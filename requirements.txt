@@ -1,1 +1,10 @@
+numpy
+pandas
+scikit-learn
+joblib
+nltk
 
+# Optional (only needed for Gmail scanning)
+# google-auth
+# google-auth-oauthlib
+# google-api-python-client
