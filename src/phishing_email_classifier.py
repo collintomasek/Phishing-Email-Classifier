@@ -10,15 +10,11 @@ import nltk
 
 nltk.download('stopwords')
 
-# ==========================
 # Load Pretrained Model & Vectorizer
-# ==========================
 clf = joblib.load("phishing_model.joblib")
 vectorizer = joblib.load("vectorizer.joblib")
 
-# ==========================
 # Clean Text Function
-# ==========================
 stop_words = set(stopwords.words('english'))
 stemmer = PorterStemmer()
 
@@ -31,9 +27,7 @@ def clean_text(text):
     tokens = [stemmer.stem(word) for word in tokens if word not in stop_words]
     return " ".join(tokens)
 
-# ==========================
 # Streamlit UI
-# ==========================
 st.title("Phishing Email Classifier (Fast Version)")
 
 email_input = st.text_area("Paste the email content below:")
@@ -44,9 +38,7 @@ if st.button("Classify"):
     st.markdown("### Result:")
     st.success("Legitimate Email") if result == 0 else st.error("Phishing Email!")
 
-# ==========================
 # Email Login and Scan
-# ==========================
 st.subheader("Scan Your Email Inbox (IMAP)")
 
 with st.form("email_form"):
@@ -93,3 +85,4 @@ if submitted:
 
     except Exception as e:
         st.error(f"Error: {e}")
+
